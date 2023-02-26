@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="card col-md-8">
+          <div class="card-header">
+            <b>Locations:</b>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="addLocationField();"
+            >
+              Add Item
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="locationContainer">
+              <div id="locationAutocomplete0" class="form-group">
+                <div id="locationField">
+                  <input
+                    placeholder="Enter your address"
+                    name="full_address[]"
+                    type="text"
+                    class="form-control autocomplete"
+                    autocomplete="no"
+                  />
+                </div>
+                <table id="address">
+                  <tr>
+                    <td class="label">Street address</td>
+                    <td class="slimField">
+                      <input
+                        class="form-control street_number"
+                        name="street_number[]"
+                        disabled="true"
+                      />
+                    </td>
+                    <td class="wideField" colspan="2">
+                      <input
+                        class="form-control route"
+                        name="route[]"
+                        disabled="true"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label">City</td>
+                    <td class="wideField" colspan="3">
+                      <input
+                        class="form-control locality"
+                        name="city[]"
+                        disabled="true"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label">State</td>
+                    <td class="slimField">
+                      <input
+                        class="form-control administrative_area_level_1"
+                        name="state[]"
+                        disabled="true"
+                      />
+                    </td>
+                    <td class="label">Zip code</td>
+                    <td class="wideField">
+                      <input
+                        class="form-control postal_code"
+                        name="postal_code[]"
+                        disabled="true"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label">Country</td>
+                    <td class="wideField" colspan="3">
+                      <input
+                        class="form-control country"
+                        name="country[]"
+                        disabled="true"
+                      />
+                    </td>
+                  </tr>
+                </table>
+                <a
+                  href="#"
+                  class="text-danger"
+                  onclick="deleteField(event, this)"
+                  >Delete</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK6CQwXxsxdUoQtoq903YiDlAaELNYiPY&libraries=places&callback=setupFirstAutocomplete"></script>
+  </body>
+</html>
